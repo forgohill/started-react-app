@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import Dashboard from './Dashboard';
 import Reviews from "./Reviews";
@@ -32,8 +32,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Dashboard />} />
-        <Route path="/reviews" element={<Reviews reviews={reviews} />} />
-        <Route exact path="/reviews/:id" element={<Review reviews={reviews} />} />
+        <Route path="/reviews" element={<Reviews reviews={reviews}/>} />
+        <Route exact path="/reviews/:id" element={<Review reviews={reviews}/>} />
         <Route path="/about-me" element={<AboutMe />}>
           <Route path="my-story" element={<MyStory />} />
           <Route path="hobbies" element={<Hobbies />} />

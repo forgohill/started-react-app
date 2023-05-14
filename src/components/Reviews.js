@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom';
 import './Reviews.css';
 
 function Reviews(props) {
+
   return (
     // необходимо изменить код внутри метода map
     <>
       <ul className="reviews">
-        {props.reviews && props.reviews.map((review) => {
-          return <li key={review.id} className="reviews__item">
-            <Link to={review.id}>
-              {review.title}
-            </Link>
+        {props.reviews && props.reviews.map((review) => (
+          <li key={review.id} className="reviews__item">
+            <Link to={`${review.id}`}>{review.title}</Link>
           </li>
-        })}
+        )
+        )}
       </ul>
     </>
   )
