@@ -1,7 +1,7 @@
 import React from 'react';
 import './AboutContent.css';
 
-function Contact() {
+function Contact () {
   return (
     <div className="about-content">
       <p>

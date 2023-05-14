@@ -1,7 +1,7 @@
 import React from 'react';
 import './AboutContent.css';
 
-function SiteMission() {
+function SiteMission () {
   return (
     <div className="about-content">
       <h3>Наша миссия</h3>

@@ -1,7 +1,7 @@
 import React from 'react';
 import './AboutContent.css';
 
-function Hobbies() {
+function Hobbies () {
   return (
     <div className="about-content">
       <p>
