@@ -10,6 +10,13 @@ function Friend(props) {
   let { friends } = props.serverData; // достаём данные, используя деструктуризацию
   const friend = friends.find(f => f.id === id);
 
+  React.useEffect(() => {
+    console.log(id)
+    return () => {
+
+    };
+  }, []);
+
   return (
     <div className="friend">
       <div className="friend__card">
