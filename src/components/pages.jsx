@@ -1,11 +1,15 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
+import { useState } from 'react-router-dom'
+
+import './Friend.css'
+import Slider from './Slider'
 
 export function Home() {
   return (
     <div className="">
-      <h1 className='heading page__item'>[Home page]</h1>
+      <h1 className='heading page__pages'>[Home page]</h1>
     </div>
   );
 };
@@ -13,7 +17,7 @@ export function Home() {
 export function About() {
   return (
     <>
-      <div className="page__item">
+      <div className="page__pages">
         <h1>[About]</h1>
       </div>
       <div className='nav'>
@@ -28,18 +32,26 @@ export function About() {
 
 export function Events() {
   return (
-    <div className="page__item">
+    <div className="page__pages">
       <h1>[Events]</h1>
     </div>
   );
 };
 
 export function Products() {
+  const [size, setSize] = React.useState(45);
+
+  function handleSizeChange(e) {
+    setSize(e.target.value);
+  }
+
   return (
     <>
-      <div className="page__item">
-        <h1>[Products]</h1>
-      </div>
+      <div className="page__pages" style={{ backgroundColor: `rgba(222, 184, 135, 0.${size})` }}>
+        <h1 style={{ fontSize: `${size}px` }}>[Products]</h1>
+
+        <Slider onChange={handleSizeChange} size={size} />
+      </div >
 
     </>
   );
@@ -58,7 +70,7 @@ export function Contact(props) {
 
   return (
     <>
-      <div className="page__item">
+      <div className="page__pages">
         <h1>[Contact]</h1>
       </div>
       <div className='nav'>
@@ -82,9 +94,9 @@ export function Contact(props) {
           )
         }
 
-        <Link to="5" className='page__item'>FRIEND__2</Link>
+        <Link to="/5" className='page__item'>FRIEND__404</Link>
       </div>
-      <Outlet />
+      {/* <Outlet /> */}
     </>
   );
 };
@@ -141,21 +153,19 @@ export function Friend(props) {
 
   return (
 
-    <><h1>asdasdasd</h1></>
-
-    // <div className="page__insert">
-    //   <h1>[Friend]</h1>
-    //   <div className="friend__card">
-    //     <img className="friend__userpic" src={friend.profilePicLight} alt={friend.name} />
-    //     <div className="friend__details">
-    //       <h3 className="friend__name">{friend.name}</h3>
-    //       <p className="friend__location">Местоположение: {friend.location}</p>
-    //       <p className="friend__quantity">Количество домашних попугаев: {friend.parrotsOwned.length}</p>
-    //       <p className="friend__fav-quote">Любимое высказывание о птицах: "{friend.favBirdQuote}"</p>
-    //     </div>
-    //   </div>
-    //   <p className="page__paragrapher">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quia obcaecati blanditiis, ab a veritatis voluptatem sequi porro optio.</p>
-    //   <p className="page__paragrapher">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quia obcaecati blanditiis, ab a veritatis voluptatem sequi porro optio.</p>
-    // </div>
+    <div className="page__insert">
+      <h1>[Friend]</h1>
+      <div className="friend__card">
+        <img className="friend__userpic" src={friend.profilePicLight} alt={friend.name} />
+        <div className="friend__details">
+          <h3 className="friend__name">{friend.name}</h3>
+          <p className="friend__location">Местоположение: {friend.location}</p>
+          <p className="friend__quantity">Количество домашних попугаев: {friend.parrotsOwned.length}</p>
+          <p className="friend__fav-quote">Любимое высказывание о птицах: "{friend.favBirdQuote}"</p>
+        </div>
+      </div>
+      <p className="page__paragrapher">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quia obcaecati blanditiis, ab a veritatis voluptatem sequi porro optio.</p>
+      <p className="page__paragrapher">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quia obcaecati blanditiis, ab a veritatis voluptatem sequi porro optio.</p>
+    </div>
   );
 };

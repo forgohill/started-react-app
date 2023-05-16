@@ -15,7 +15,22 @@ code {
 .nav {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+  /* max-width: 500px; */
   background-color: rgba(0, 139, 139, 0.246);
+}
+
+.header__nav {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.page__pages {
+  background-color: darkgray;
+  padding: 50px;
 }
 
 .page__item {
@@ -26,7 +41,8 @@ code {
   box-sizing: border-box;
   margin: 5px 5px;
   padding: 20px 20px;
-  background-color: aquamarine;
+  border: 5px solid rgba(127, 255, 212, 0.8);
+  background-color: rgba(127, 255, 212, 0.8);
   color: black;
   text-decoration: none;
 }
@@ -75,4 +91,63 @@ code {
 .page__span {
   font-weight: 600;
   font-size: x-large;
+}
+
+.home__btn {
+  margin: 0 10px;
+  padding: 10px 50px;
+
+  border: 5px solid gray;
+
+  outline: none;
+  background-color: rgba(218, 165, 32, 0.267);
+
+  cursor: pointer;
+}
+
+
+.home__btn:hover {
+  background-color: darksalmon;
+}
+
+
+
+.theme-select {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  padding: 10px;
+}
+
+.theme-select__heding {
+  padding: 0 50px;
+
+  display: flex;
+  align-items: center;
+}
+
+.theme-select__icon {
+  padding: 5px;
+  font-size: 25px;
+
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: rgba(222, 184, 135, 0.259);
+}
+
+.theme-select__span {
+  display: block;
+  margin: 10px;
+  padding: 0 10px;
+}
+
+.theme__day {
+  background-color: azure;
+}
+
+
+.theme__night {
+  background-color: rgba(128, 128, 128, 0.7);
 }

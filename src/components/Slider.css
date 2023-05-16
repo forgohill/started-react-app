@@ -1,0 +1,10 @@
+#slider-container {
+  display: flex;
+  padding: 15px 150px;
+}
+
+#slider-container .counter {
+  margin-left: 0.5rem;
+  width: 3rem;
+  font-size: large;
+}

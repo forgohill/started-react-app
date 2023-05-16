@@ -19,58 +19,36 @@ import {
 import './App.css';
 import Whoops404 from './Whoops404';
 
+import ThemeSelect from './ThemeSelect.jsx';
+
 
 function App() {
+  const [theme, setTheme] = React.useState('theme__day');
 
-  // let element = useRoutes(
-  //   [
-  //     { path: "/", element: <Home /> },
-  //     {
-  //       path: "about", element: <About />,
-  //       children:
-  //         [
-  //           { path: "services", element: <Services /> },
-  //           { path: "history", element: <History /> },
-  //           { path: "location", element: <Location /> },
-  //         ]
-  //     },
-  //     { path: "events", element: <Events /> },
-  //     { path: "products", element: <Products /> },
-  //     {
-  //       path: "contact", element: <Contact serverData={serverData} />,
-  //       children: [
-  //         { path: "contact:id", element: <Friend serverData={serverData} /> },
+  function handleThemeChange(e) {
+    setTheme(e.target.value);
+  };
 
-  //       ]
-  //     },
-  //     { path: "*", element: <Whoops404 /> },
-  //     { path: "services", redirectTo: "about/services" },
-  //   ]
-  // )
   return (
-    <div className="App">
+    <div className={`App ${theme}`}>
+      <ThemeSelect onChange={handleThemeChange} theme={theme} />
       <Header />
-      {/* {element} */}
       <Routes>
         <Route exact path='/' element={<Home />} />
-        <Route path='about' element={<About />} >
+        <Route path='/about' element={<About />} >
           <Route path='services' element={<Services />} />
           <Route path='history' element={<History />} />
           <Route path='location' element={<Location />} />
         </Route>
-        <Route path='events' element={<Events />} />
-        <Route path='products' element={<Products />} />
-        {/* <Route exact path='contact' element={<Contact serverData={serverData} />} /> */}
-        {/* <Route path='contact:id' element={<Friend serverData={serverData} />} /> */}
-        <Route path='contact' element={<Contact serverData={serverData} />} >
-          <Route path='contact:id' element={<Friend serverData={serverData} />} />
-          <Route path='5' element={<Friend serverData={serverData} />} />
-        </Route>
+        <Route path='/events' element={<Events />} />
+        <Route path='/products' element={<Products />} />
+        <Route exact path='/contact' element={<Contact serverData={serverData} />} />
+        <Route path='/contact/:id' element={<Friend serverData={serverData} />} />
         <Route path='*' element={<Whoops404 />}></Route>
       </Routes>
-
     </div >
   );
 }
 
 export default App;
+
