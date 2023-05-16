@@ -44,17 +44,17 @@ function App() {
       <TranslationContext.Provider value={translations[lang]}>
         <ThemeSelect onChange={handleThemeChange} theme={theme} />
         <Header onChange={handleLangChange} lang={lang} />
-        <Routes>
-          <Route exact path='%PUBLIC_URL%/' element={<Home />} />
-          <Route path='%PUBLIC_URL%/about' element={<About />} >
+        <Routes >
+          <Route exact path='started-react-app/' element={<Home />} />
+          <Route path='started-react-app/about' element={<About />} >
             <Route path='services' element={<Services />} />
             <Route path='history' element={<History />} />
             <Route path='location' element={<Location />} />
           </Route>
-          <Route path='%PUBLIC_URL%/events' element={<Events />} />
-          <Route path='%PUBLIC_URL%/products' element={<Products />} />
-          <Route exact path='%PUBLIC_URL%/contact' element={<Contact serverData={serverData} />} />
-          <Route path='%PUBLIC_URL%/contact/:id' element={<Friend serverData={serverData} />} />
+          <Route path='started-react-app/events' element={<Events />} />
+          <Route path='started-react-app/products' element={<Products />} />
+          <Route exact path='started-react-app/contact' element={<Contact serverData={serverData} />} />
+          <Route path='started-react-app/contact/:id' element={<Friend serverData={serverData} />} />
           <Route path='*' element={<Whoops404 />}></Route>
         </Routes>
       </TranslationContext.Provider>
