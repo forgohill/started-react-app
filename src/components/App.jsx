@@ -21,6 +21,8 @@ import Whoops404 from './Whoops404';
 
 import ThemeSelect from './ThemeSelect.jsx';
 
+import TranslationContext from './TranslationContext.jsx'
+
 
 function App() {
   const [theme, setTheme] = React.useState('theme__day');

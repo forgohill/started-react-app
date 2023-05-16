@@ -31,6 +31,9 @@ code {
 .page__pages {
   background-color: darkgray;
   padding: 50px;
+
+  position: relative;
+  overflow: hidden;
 }
 
 .page__item {
@@ -119,6 +122,8 @@ code {
   justify-content: center;
 
   padding: 10px;
+
+  /* z-index: 10; */
 }
 
 .theme-select__heding {
@@ -145,9 +150,20 @@ code {
 
 .theme__day {
   background-color: azure;
+
 }
 
 
 .theme__night {
   background-color: rgba(128, 128, 128, 0.7);
+}
+
+
+.bubble {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0.9;
 }

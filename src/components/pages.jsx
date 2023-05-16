@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Outlet } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import { useState } from 'react-router-dom'
+import Bubbles from './miniapps/Bubbles.jsx'
 
 import './Friend.css'
 import Slider from './Slider'
@@ -39,7 +40,7 @@ export function Events() {
 };
 
 export function Products() {
-  const [size, setSize] = React.useState(45);
+  const [size, setSize] = React.useState(0);
 
   function handleSizeChange(e) {
     setSize(e.target.value);
@@ -47,10 +48,11 @@ export function Products() {
 
   return (
     <>
-      <div className="page__pages" style={{ backgroundColor: `rgba(222, 184, 135, 0.${size})` }}>
-        <h1 style={{ fontSize: `${size}px` }}>[Products]</h1>
+      <div className="page__pages" style={{ backgroundColor: `rgba(255, 0, 0, 0.${size})` }}>
+        <h1 >[Products]</h1>
 
         <Slider onChange={handleSizeChange} size={size} />
+        <Bubbles size={size} />
       </div >
 
     </>
