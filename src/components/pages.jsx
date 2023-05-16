@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
-import { useState } from 'react-router-dom'
 import Bubbles from './miniapps/Bubbles.jsx'
 import { TranslationContext } from './TranslationContext';
 import './Friend.css'
@@ -67,13 +66,6 @@ export function Contact(props) {
   const translation = React.useContext(TranslationContext);
   let { friends } = props.serverData;
 
-  React.useEffect(() => {
-    console.log(props)
-    console.log({ friends })
-    return () => {
-    };
-  }, []);
-
   return (
     <>
       <div className="page__pages">
@@ -102,7 +94,6 @@ export function Contact(props) {
 
         <Link to="/5" className='page__item'>{translation.friend404}</Link>
       </div>
-      {/* <Outlet /> */}
     </>
   );
 };

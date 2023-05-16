@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes, useRoutes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import serverData from '../utils/serverData';
 import Header from './Header';
 import {
@@ -25,17 +25,13 @@ function App() {
   const [langStatus, setLangStatus] = React.useState(true);
 
   function handleLangChange() {
-    // console.log('клик клик')
+
     if (langStatus === true) {
       setLang("en");
-      // console.log(lang)
       setLangStatus(false);
-      // console.log(langStatus)
     } else {
       setLang("ru");
-      // console.log(lang)
       setLangStatus(true);
-      // console.log(langStatus)
     }
   }
 

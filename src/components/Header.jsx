@@ -2,20 +2,12 @@ import React from 'react';
 
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
-import { useEffect, useState } from 'react-router-dom'
+
 import { TranslationContext } from './TranslationContext';
 import './Header.css';
 
 function Header(props) {
-
   const translation = React.useContext(TranslationContext);
-
-  React.useEffect(() => {
-    console.log(translation)
-    return () => {
-    };
-  }, [translation]);
-
 
   const navigate = useNavigate();
 
