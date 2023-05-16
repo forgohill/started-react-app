@@ -9,7 +9,7 @@ function Whoops404() {
 
   return (
     <div className="page__404">
-      <h1 className='heading'>[404] {translation.resourseNotFound} {location.pathname}</h1>
+      <h1 className=''>[404] {translation.resourseNotFound} {location.pathname}</h1>
     </div>
   );
 }

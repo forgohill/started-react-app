@@ -29,7 +29,9 @@ code {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  width: 100%;
   /* max-width: 500px; */
+
   background-color: rgba(0, 139, 139, 0.246);
 }
 

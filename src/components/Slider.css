@@ -1,14 +1,14 @@
 #slider-container {
   position: relative;
   display: flex;
-  padding: 15px 150px;
+  padding: 0.5rem 1rem;
 
   z-index: 10;
 }
 
 #slider-container .counter {
   margin-left: 0.5rem;
-  width: 3rem;
+  max-width: 3rem;
   font-size: large;
   z-index: 10;
 }
