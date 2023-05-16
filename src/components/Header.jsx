@@ -1,30 +1,20 @@
 import React from 'react';
+
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react-router-dom'
-import { TranslationContext, translations } from './TranslationContext';
+import { TranslationContext } from './TranslationContext';
 import './Header.css';
 
-function Header() {
+function Header(props) {
 
-  const [lang, setLang] = React.useState(true);
-
-  function handleLangButton() {
-    // console.log(lang)
-    if (lang === true) {
-      setLang(false);
-    } else {
-      setLang(true);
-    }
-  }
-
-
+  const translation = React.useContext(TranslationContext);
 
   React.useEffect(() => {
-    console.log(translations)
+    console.log(translation)
     return () => {
     };
-  }, [translations]);
+  }, [translation]);
 
 
   const navigate = useNavigate();
@@ -43,22 +33,26 @@ function Header() {
     <>
 
       <div className='header__nav'>
-        <Link to="/" className='page__item'>[Home]</Link>
-        <h1 className='heading'>{translations.ru.welcomePhrase}</h1>
-        <button className="home__btn" onClick={goBack}>[НАЗАД]</button>
-        <button className="home__btn" onClick={goForward}>[ВПЕРЕД]</button>
+        <Link to="/" className='page__item'>{translation.home}</Link>
+        <h1 className='heading'>
+          {translation.welcomePhrase}
+        </h1>
+        <button className="home__btn" onClick={goBack}>{translation.back}</button>
+        <button className="home__btn" onClick={goForward}>{translation.forward}</button>
       </div>
       <div className='header__nav'>
-        <div>смена языка: </div>
-        <button className="home__btn" onClick={handleLangButton}>{`[ENG]`}</button>
-        {/* <button className="home__btn" onClick={handleLangButton}>[RUS]</button> */}
+        <div>{translation.changeLangaule} </div>
+        <button className="home__btn" onClick={props.onChange}>
+          {translation.langSet}
+        </button>
+
       </div>
 
       <div className='nav'>
-        <Link to="/about" className='page__item'>ABOUT</Link>
-        <Link to="/events" className='page__item'>EVENTS</Link>
-        <Link to="/products" className='page__item'>PRODUCTS</Link>
-        <Link to="/contact" className='page__item'>CONTACT US</Link>
+        <Link to="/about" className='page__item'>{translation.about}</Link>
+        <Link to="/events" className='page__item'>{translation.events}</Link>
+        <Link to="/products" className='page__item'>{translation.products}</Link>
+        <Link to="/contact" className='page__item'>{translation.contactUs}</Link>
       </div>
     </>
   );
