@@ -25,7 +25,7 @@ function Header(props) {
     <>
 
       <div className='header__nav'>
-        <Link to="/" className='page__item'>{translation.home}</Link>
+        <Link to="%PUBLIC_URL%/" className='page__item'>{translation.home}</Link>
         <h1 className='heading'>
           {translation.welcomePhrase}
         </h1>
@@ -41,10 +41,10 @@ function Header(props) {
       </div>
 
       <div className='nav'>
-        <Link to="/about" className='page__item'>{translation.about}</Link>
-        <Link to="/events" className='page__item'>{translation.events}</Link>
-        <Link to="/products" className='page__item'>{translation.products}</Link>
-        <Link to="/contact" className='page__item'>{translation.contactUs}</Link>
+        <Link to="%PUBLIC_URL%/about" className='page__item'>{translation.about}</Link>
+        <Link to="%PUBLIC_URL%/events" className='page__item'>{translation.events}</Link>
+        <Link to="%PUBLIC_URL%/products" className='page__item'>{translation.products}</Link>
+        <Link to="%PUBLIC_URL%/contact" className='page__item'>{translation.contactUs}</Link>
       </div>
     </>
   );

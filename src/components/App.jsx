@@ -45,16 +45,16 @@ function App() {
         <ThemeSelect onChange={handleThemeChange} theme={theme} />
         <Header onChange={handleLangChange} lang={lang} />
         <Routes>
-          <Route exact path='/' element={<Home />} />
-          <Route path='/about' element={<About />} >
+          <Route exact path='%PUBLIC_URL%/' element={<Home />} />
+          <Route path='%PUBLIC_URL%/about' element={<About />} >
             <Route path='services' element={<Services />} />
             <Route path='history' element={<History />} />
             <Route path='location' element={<Location />} />
           </Route>
-          <Route path='/events' element={<Events />} />
-          <Route path='/products' element={<Products />} />
-          <Route exact path='/contact' element={<Contact serverData={serverData} />} />
-          <Route path='/contact/:id' element={<Friend serverData={serverData} />} />
+          <Route path='%PUBLIC_URL%/events' element={<Events />} />
+          <Route path='%PUBLIC_URL%/products' element={<Products />} />
+          <Route exact path='%PUBLIC_URL%/contact' element={<Contact serverData={serverData} />} />
+          <Route path='%PUBLIC_URL%/contact/:id' element={<Friend serverData={serverData} />} />
           <Route path='*' element={<Whoops404 />}></Route>
         </Routes>
       </TranslationContext.Provider>
