@@ -1,18 +1,3 @@
-/*
-<div className="friend__card">
-  <img className="friend__userpic" src={friend.profilePicLight} alt={friend.name} />
-  <div className="friend__details">
-    <h3 className="friend__name">{friend.name}</h3>
-    <p className="friend__location">Местоположение: {friend.location}</p>
-    <p className="friend__quantity">Количество домашних попугаев: {friend.parrotsOwned.length}</p>
-    <p className="friend__fav-quote">Любимое высказывание о птицах: "{friend.favBirdQuote}"</p>
-  </div>
-</div>
-<p className="page__paragrapher">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quia obcaecati blanditiis,
-  ab a veritatis voluptatem sequi porro optio.</p>
-<p className="page__paragrapher">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quia obcaecati blanditiis,
-  ab a veritatis voluptatem sequi porro optio.</p>
-</div> */
 .friend__card {
   padding: 30px;
   display: flex;
@@ -24,4 +9,12 @@
 
 .friend__userpic {
   height: 300px;
+
+}
+
+@media screen and (max-width: 765px) {
+  .friend__card {
+    display: flex;
+    flex-direction: column;
+  }
 }

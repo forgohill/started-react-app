@@ -27,10 +27,10 @@ function App() {
   function handleLangChange() {
 
     if (langStatus === true) {
-      setLang("en");
+      setLang("ru");
       setLangStatus(false);
     } else {
-      setLang("ru");
+      setLang("en");
       setLangStatus(true);
     }
   }

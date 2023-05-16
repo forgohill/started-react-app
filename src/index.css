@@ -13,9 +13,15 @@ code {
 }
 
 .heading {
-  margin: 50px;
-  padding: 0;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 5px;
+  padding: 0;
+  max-width: 220px;
   min-height: 150px;
 }
 
@@ -31,8 +37,16 @@ code {
   display: flex;
   flex-direction: row;
 
+
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 765px) {
+  .header__nav {
+    flex-direction: column;
+  }
 }
 
 .page__pages {
@@ -80,6 +94,10 @@ code {
 }
 
 .page__insert {
+
+  display: flex;
+
+  flex-direction: column;
   background-color: burlywood;
   border: 5px solid royalblue;
 

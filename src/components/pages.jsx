@@ -9,8 +9,8 @@ import Slider from './Slider'
 export function Home() {
   const translation = React.useContext(TranslationContext);
   return (
-    <div className="">
-      <h1 className='heading page__pages'>{translation.homePage}</h1>
+    <div className="page__pages">
+      <h1 className=''>{translation.homePage}</h1>
     </div>
   );
 };
