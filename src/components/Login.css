@@ -1,0 +1,26 @@
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login__button-container {
+  margin: 10px;
+}
+
+.login__button-container:hover {
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.login__signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
